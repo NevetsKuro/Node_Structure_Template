@@ -39,7 +39,10 @@ app.use("/place", placeRoutes);
 
 app.get("/", (req, res) => {
   // res.send("Server is running");
-  res.render('index', { title: 'Hey', message: 'Hello there!' })
+  res.render('index')
+});
+app.get("/place/", (req, res) => {
+  res.render('search')
 });
 
 app.listen(port, () => console.log(`Listening to port ${port}`));

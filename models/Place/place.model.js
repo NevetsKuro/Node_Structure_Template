@@ -58,7 +58,7 @@ placeSchema.statics.findPlace = async function (filters, cb) {
     let Place = this;
 
     await Place
-      .find(filters)
+      .find({ $or: [{ place_name: filters.place_name }, { location: [parseFloat(filters.longitude), parseFloat(filters.latitude)] }] })
       .then(data => {
         console.log("Document Added")
         console.log(data);

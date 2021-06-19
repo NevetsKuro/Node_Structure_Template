@@ -1,0 +1,16 @@
+doctype html
+html(style='margin: 0; padding: 0; box-sizing:border-box')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title GoGaga
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href="https://fonts.googleapis.com/css?family=Questrial", rel="stylesheet")
+body
+    h1= "Search by Place/Location"
+    form(action="/place/find" method="GET")
+      p Place Name:
+        input(type="text" name="place_name" placeholder="")
+      p Location:
+        input(type="text" name="longitude" placeholder="Longitude")
+        input(type="text" name="latitude" placeholder="Latitude")
+      input(type="submit")
